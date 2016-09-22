@@ -1,1 +1,180 @@
 @import "bourbon/bourbon"
+
++font-face("Raleway", "../fonts/RalewayRegular/RalewayRegular", normal, $file-formats: eot woff ttf)
++font-face("Raleway", "../fonts/RalewayBold/RalewayBold", bold, $file-formats: eot woff ttf)
++font-face("Raleway", "../fonts/RalewayLight/RalewayLight", 300, $file-formats: eot woff ttf)
++font-face("Raleway", "../fonts/RalewaySemiBold/RalewaySemiBold", 600, $file-formats: eot woff ttf)
+
+$color: #1ad1ff
+$text_color: #888
+$main_color: #222
+$bg_light: #FAFAFA
+
+@mixin kerning($kerning)
+	letter-spacing: $kerning + px
+
+*
+    margin: 0
+    padding: 0
+
+html  
+	position: relative
+	min-height: 100%
+
+h1,
+p
+	margin: 0
+	padding: 0
+
+.loader 
+	background: none repeat scroll 0 0 $bg_light
+	position: fixed
+	height: 100%
+	width: 100%
+	bottom: 0
+	left: 0
+	right: 0
+	top: 0
+	z-index: 9999
+	.loader_inner 
+		background-image: url("../img/preloader.gif")
+		background-repeat: no-repeat
+		background-position: center center
+		background-color: #fff
+		height: 60px
+		width: 60px
+		margin-top: -30px
+		margin-left: -30px
+		left: 50%
+		top: 50%
+		position: absolute 
+
+body
+	background-color: $bg_light
+	height: 100%
+ 	min-width: 900px
+	font-family: "Raleway", sans-serif
+	font-weight: normal
+	font-size: 14px
+
+header, footer
+	background-color: $main_color
+	padding: 20px
+
+.title
+	float: left
+	h1
+		color: #b3b3b3
+		font-size: 50px
+		font-weight: 600
+		line-height: 165px
+
+.controls
+	float: right
+	height: 165px
+
+.exit
+	float: right
+	line-height: 165px;
+	text-decoration: none
+	font-size: 20px
+	color: $color
+
+.close 
+	font-size: 28px
+
+#registrationMenu
+	button
+		margin-bottom: 8px
+	p
+		+kerning(1)
+		color: $color 
+
+.validRegistration
+	+kerning(1)
+	color: red
+
+main
+	padding: 80px 0 120px 0
+
+#item1, #item2
+	padding: 8px 12px
+	margin-left: 10px;
+
+.itemView, .review
+	padding: 20px
+	background-color: white
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5)
+	border-radius: 5px
+	img
+		margin: 0 auto
+		width: 244px
+		height: 217px
+	#title
+		font-size: 30px
+		text-transform: capitalize
+
+#description
+	font-size: 18px
+	text-transform: capitalize
+
+.review 
+	margin: 18px 0px 0
+	padding: 10px
+
+.reviews
+	padding: 20px
+	margin-top: 40px
+
+.reviewRate
+	font-size: 22px
+	padding: 10px 10px 0 0
+	font-weight: bold
+
+.reviewComment
+	font-size: 16px
+
+div.stars 
+	width: 198px
+	display: inline-block
+	margin: 0 0 -18px 0px
+
+input.star 
+	display: none
+
+label.star 
+	float: right
+	padding: 9px
+	font-size: 21px
+	color: #444
+	transition: all .2s
+
+input.star:checked ~ label.star:before 
+	content: '\f005'
+	color: #FD4;
+	transition: all .25s
+
+input.star-5:checked ~ label.star:before 
+	color: #FE7;
+	text-shadow: 0 0 20px #952
+
+input.star-1:checked ~ label.star:before 
+	color: #F62
+
+label.star:before 
+	content: '\f006'
+	font-family: FontAwesome
+
+.btnReview
+	border: none
+	padding: 5px 20px
+	margin-top: 15px
+
+footer
+	height: 60px
+	position: absolute
+	bottom: 0
+	width: 100%
+	p
+		color: #b3b3b3
+		font-size: 16px

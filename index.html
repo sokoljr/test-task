@@ -3,15 +3,12 @@
 <head>
 	<meta charset="utf-8" />
 	<title>Test LightIt Sokol</title>
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<link rel="stylesheet" href="libs/bootstrap/bootstrap.min.css" />
-	<link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css" />
-	<link rel="stylesheet" href="libs/animate/animate.min.css" />
-	<link rel="stylesheet" href="css/fonts.css" />
-	<link rel="stylesheet" href="css/main.css" />
-	<link rel="stylesheet" href="css/color.css" />
-	<link rel="stylesheet" href="css/media.css" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<link rel="stylesheet" href="libs/bootstrap/bootstrap.min.css"/>
+	<link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css"/>
+	<link rel="stylesheet" href="libs/animate/animate.min.css"/>
+	<link rel="stylesheet" href="css/main.min.css"/>
 </head>
 <body>
 	
@@ -19,9 +16,126 @@
 		<div class="loader_inner"></div>
 	</div>
 
+	<header>
+    	<div class="container-fluid">
+    		<div class="row">
+				<div class="col-md-12">
+		    		<div class="title">
+		    			<h1>Test</h1>
+		    		</div>
+		    		<div class="controls">
+						<a class="exit hidden" href="">Exit</a>
+						<div id="registrationMenu">
+                    		<form class="form" role="form">
+		                        <div class="form-group">
+		                            <input type="login" class="form-control" id="logName" placeholder="Name" required>
+		                        </div>
+		                        <div class="form-group">
+		                            <input type="password" class="form-control" id="logPass" placeholder="Password" required>
+		                        </div>
+		                        <button id="logInBtn" type="submit" class="btn btn-success"><i class="fa fa-user fa-fw"></i>Log In</button>
+		                        <button id="hideValidation" class="btn btn-info registration" data-toggle="modal" data-target="#modalReg"><i class="fa fa-plus fa-fw"></i>Sign Up</button>
+		                        <p class="loginValidation hidden">First Sign Up<i class="fa fa-refresh fa-spin fa-2x fa-fw"></i><span class="sr-only">Loading...</span></p>
+                    		</form>
+                    	</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="registration">
+                <div class="modal fade" id="modalReg" tabindex="-1" role="dialog" aria-labelledby="modalReglLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h3 class="modal-title" id="modalRegLabel">Please, enter your data</h4>
+                            </div>
+                            <div class="modal-body">
+                                <form action="#" method="post" id="newregistration">
+                                	<div class="row delegation">
+                                    	<div class="form-group col-lg-4">
+                                            <input name="user" type="text" id="newName" class="form-control" placeholder="login" value="" required/>
+                                        </div>
+                                        <div class="form-group col-lg-4">
+                                            <input name="pwdLogin" type="password" id="newPass" class="form-control" value="" placeholder="Password" required/>
+                                        </div>
+                                    </div>
+                                    <div class="row delegation">
+                                        <div class="form-group col-lg-4">
+		                                    <input name="Submit" type="button" id="regBtn" class="btn btn-info form-control" value="Sign Up"/>
+		                                </div>
+		                            </div>
+                                    <p class="validRegistration hidden">Login already taken</p>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+	                        	<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+	                    	</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    	</div>
+	</header>
+	
+	<main>
+		<div class="content container-fluid">
+			<div class="row">
+				<div class="col-md-12 text-center">
+		            <input id="productFirst" class="btn btn-info" type="submit" value="Product #1"/>
+		            <input id="productSecond" class="btn btn-info" type="submit" value="Product #2"/>
+		        </div>
+		    </div>
+	        <div class="row">
+			    <div class="col-sm-4">
+			        <div id="itemView" class="itemView hidden">
+			            <span class="products" id="title"></span>
+			            <img class="img-responsive" id="idImg">
+			            <span id="description"></span>
+			        </div>
+			    </div>
+			</div>
+			<div class="row">
+			    <div class="reviews col-sm-8">
+			        <div class="new-review hidden">
+			            <div class="stars">
+			                <form action="">
+			                    <input class="star star-5" id="star-5" type="radio" value=5 name="star"/>
+			                    <label class="star star-5" for="star-5"></label>
+			                    <input class="star star-4" id="star-4" type="radio" value=4 name="star"/>
+			                    <label class="star star-4" for="star-4"></label>
+			                    <input class="star star-3" id="star-3" type="radio" value=3 name="star"/>
+			                    <label class="star star-3" for="star-3"></label>
+			                    <input class="star star-2" id="star-2" type="radio" value=2 name="star"/>
+			                    <label class="star star-2" for="star-2"></label>
+			                    <input class="star star-1" id="star-1" type="radio" value=1 checked name="star"/>
+			                    <label class="star star-1" for="star-1"></label>
+			                </form>
+			            </div>
+			            <textarea id="content" placeholder="Your comments..." class="form-control" value=""></textarea>
+			            <button class="btnReview btn-info submit-btn">Send<i class="fa fa-check" aria-hidden="true"></i></button>
+			        </div>
+			        <div class="Review"></div>
+			        <div id="commentsReview" class="comments"></div>
+			    </div>
+			</div>
+		</div>
+		<div id="www" class="form-inline"></div>
+	</main>
+
+	<footer>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-12 text-center">
+					<p>Copyright &copy; Your Website 2016</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+
 	<script src="libs/jquery/jquery-2.1.3.min.js"></script>
 	<script src="libs/bootstrap/bootstrap.min.js"></script>
 	<script src="libs/animate/animate-css.js"></script>
-	<script src="js/script.js"></script>
+	<script src="js/prod/script.min.js"></script>
 </body>
 </html>
