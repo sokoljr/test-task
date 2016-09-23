@@ -1,0 +1,215 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../../fonts/RalewayRegular/RalewayRegular.eot?#iefix") format("embedded-opentype"), url("../../fonts/RalewayRegular/RalewayRegular.woff") format("woff"), url("../../fonts/RalewayRegular/RalewayRegular.ttf") format("truetype"); }
+@font-face {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: bold;
+  src: url("../../fonts/RalewayBold/RalewayBold.eot?#iefix") format("embedded-opentype"), url("../../fonts/RalewayBold/RalewayBold.woff") format("woff"), url("../../fonts/RalewayBold/RalewayBold.ttf") format("truetype"); }
+@font-face {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 300;
+  src: url("../../fonts/RalewayLight/RalewayLight.eot?#iefix") format("embedded-opentype"), url("../../fonts/RalewayLight/RalewayLight.woff") format("woff"), url("../../fonts/RalewayLight/RalewayLight.ttf") format("truetype"); }
+@font-face {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 600;
+  src: url("../../fonts/RalewaySemiBold/RalewaySemiBold.eot?#iefix") format("embedded-opentype"), url("../../fonts/RalewaySemiBold/RalewaySemiBold.woff") format("woff"), url("../../fonts/RalewaySemiBold/RalewaySemiBold.ttf") format("truetype"); }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/education\/Test\%20task\%20LigtIt\/src\/sass\/main\.sass}line{font-family:\0000323}}
+html {
+  position: relative;
+  min-height: 100%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/education\/Test\%20task\%20LigtIt\/src\/sass\/main\.sass}line{font-family:\0000327}}
+*,
+h1,
+p {
+  margin: 0;
+  padding: 0; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/education\/Test\%20task\%20LigtIt\/src\/sass\/main\.sass}line{font-family:\0000333}}
+.loader {
+  background: none repeat scroll 0 0 #FAFAFA;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 9999; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/education\/Test\%20task\%20LigtIt\/src\/sass\/main\.sass}line{font-family:\0000343}}
+  .loader .loader_inner {
+    background-image: url("../../img/preloader.gif");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: #FAFAFA;
+    height: 60px;
+    width: 60px;
+    margin-top: -30px;
+    margin-left: -30px;
+    left: 50%;
+    top: 50%;
+    position: absolute; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/education\/Test\%20task\%20LigtIt\/src\/sass\/main\.sass}line{font-family:\0000356}}
+body {
+  background-color: #FAFAFA;
+  height: 100%;
+  min-width: 900px;
+  font-family: "Raleway", sans-serif;
+  font-weight: normal;
+  font-size: 16px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/education\/Test\%20task\%20LigtIt\/src\/sass\/main\.sass}line{font-family:\0000364}}
+header, footer {
+  background-color: #222;
+  padding: 20px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/education\/Test\%20task\%20LigtIt\/src\/sass\/main\.sass}line{font-family:\0000368}}
+.title {
+  float: left; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/education\/Test\%20task\%20LigtIt\/src\/sass\/main\.sass}line{font-family:\0000370}}
+  .title h1 {
+    color: #b3b3b3;
+    font-size: 50px;
+    font-weight: 600;
+    line-height: 165px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/education\/Test\%20task\%20LigtIt\/src\/sass\/main\.sass}line{font-family:\0000376}}
+.controls {
+  float: right; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/education\/Test\%20task\%20LigtIt\/src\/sass\/main\.sass}line{font-family:\0000379}}
+.exit {
+  float: right;
+  font-size: 20px;
+  margin: 55px 0; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/education\/Test\%20task\%20LigtIt\/src\/sass\/main\.sass}line{font-family:\0000384}}
+.close {
+  font-size: 28px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/education\/Test\%20task\%20LigtIt\/src\/sass\/main\.sass}line{font-family:\0000388}}
+#registrationMenu button {
+  margin-bottom: 8px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/education\/Test\%20task\%20LigtIt\/src\/sass\/main\.sass}line{font-family:\0000390}}
+#registrationMenu p {
+  letter-spacing: 1px;
+  color: #1ad1ff; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/education\/Test\%20task\%20LigtIt\/src\/sass\/main\.sass}line{font-family:\0000394}}
+.validRegistration, .rev_error {
+  letter-spacing: 1px;
+  color: red;
+  margin-top: 10px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/education\/Test\%20task\%20LigtIt\/src\/sass\/main\.sass}line{font-family:\0000399}}
+main {
+  padding: 80px 50px 120px;
+  min-height: 859px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/education\/Test\%20task\%20LigtIt\/src\/sass\/main\.sass}line{font-family:\00003103}}
+.itemView {
+  text-align: center; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/education\/Test\%20task\%20LigtIt\/src\/sass\/main\.sass}line{font-family:\00003107}}
+.review ul {
+  list-style: none;
+  overflow: auto;
+  max-height: 400px;
+  margin-top: 30px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/education\/Test\%20task\%20LigtIt\/src\/sass\/main\.sass}line{font-family:\00003113}}
+.productRew {
+  margin-bottom: 20px;
+  background-color: white;
+  border: 1px solid lightgray;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/education\/Test\%20task\%20LigtIt\/src\/sass\/main\.sass}line{font-family:\00003118}}
+  .productRew p {
+    margin: 10px;
+    font-size: 16px;
+    text-transform: capitalize; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/education\/Test\%20task\%20LigtIt\/src\/sass\/main\.sass}line{font-family:\00003123}}
+.product {
+  width: 30%;
+  display: inline-block;
+  margin: 10px 10px;
+  padding: 10px 20px;
+  background-color: white;
+  border: 1px solid lightgray;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  cursor: pointer; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/education\/Test\%20task\%20LigtIt\/src\/sass\/main\.sass}line{font-family:\00003133}}
+  .product img {
+    height: 200px;
+    width: 220px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/education\/Test\%20task\%20LigtIt\/src\/sass\/main\.sass}line{font-family:\00003136}}
+  .product p {
+    text-transform: capitalize;
+    margin: 5px 0;
+    font-size: 16px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/education\/Test\%20task\%20LigtIt\/src\/sass\/main\.sass}line{font-family:\00003141}}
+div.stars {
+  width: 198px;
+  display: inline-block;
+  margin: 0 0 -18px 0px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/education\/Test\%20task\%20LigtIt\/src\/sass\/main\.sass}line{font-family:\00003146}}
+input.star {
+  display: none; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/education\/Test\%20task\%20LigtIt\/src\/sass\/main\.sass}line{font-family:\00003149}}
+label.star {
+  float: right;
+  padding: 9px;
+  font-size: 21px;
+  color: #444;
+  transition: all 0.2s; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/education\/Test\%20task\%20LigtIt\/src\/sass\/main\.sass}line{font-family:\00003156}}
+input.star:checked ~ label.star:before {
+  content: "";
+  color: #FD4;
+  transition: all 0.25s; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/education\/Test\%20task\%20LigtIt\/src\/sass\/main\.sass}line{font-family:\00003161}}
+input.star-5:checked ~ label.star:before {
+  color: #FE7;
+  text-shadow: 0 0 20px #952; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/education\/Test\%20task\%20LigtIt\/src\/sass\/main\.sass}line{font-family:\00003165}}
+input.star-1:checked ~ label.star:before {
+  color: #F62; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/education\/Test\%20task\%20LigtIt\/src\/sass\/main\.sass}line{font-family:\00003168}}
+label.star:before {
+  content: "";
+  font-family: FontAwesome; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/education\/Test\%20task\%20LigtIt\/src\/sass\/main\.sass}line{font-family:\00003172}}
+.btnReview {
+  border: none;
+  padding: 5px 20px;
+  margin-top: 15px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/education\/Test\%20task\%20LigtIt\/src\/sass\/main\.sass}line{font-family:\00003177}}
+footer {
+  height: 60px;
+  position: absolute;
+  bottom: 0;
+  width: 100%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/education\/Test\%20task\%20LigtIt\/src\/sass\/main\.sass}line{font-family:\00003182}}
+  footer p {
+    color: #888;
+    font-size: 16px; }
+
+/*# sourceMappingURL=main.css.map */

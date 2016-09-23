@@ -8,24 +8,24 @@ var concat = require('gulp-concat');
 var plumber = require('gulp-plumber');
 
 gulp.task('minify', function() {
-    gulp.src('sass/main.sass')
+    gulp.src('src/sass/*.sass')
         .pipe(sass().on('error', sass.logError))
         .pipe(concat('main.min.css'))
         .pipe(minify())
-        .pipe(gulp.dest('css'))
+        .pipe(gulp.dest('prod/css'))
         .pipe(notify('Minify css is completed'));
 });
 
 gulp.task('uglify', function() {
-    gulp.src('js/src/*.js')
+    gulp.src('src/js/*.js')
         .pipe(plumber())
         .pipe(concat('script.min.js'))
         .pipe(uglify())
-        .pipe(gulp.dest('js/prod'))
+        .pipe(gulp.dest('prod/js'))
         .pipe(notify('Minify js is completed'));
 });
 
 gulp.task('watch', function() {
-    gulp.watch('js/src/*.js', ['uglify']);
-    gulp.watch('sass/*.sass', ['minify']);
+    gulp.watch('src/js/*.js', ['uglify']);
+    gulp.watch('src/sass/*.sass', ['minify']);
 });

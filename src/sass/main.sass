@@ -1,26 +1,30 @@
 @import "bourbon/bourbon"
 
-+font-face("Raleway", "../fonts/RalewayRegular/RalewayRegular", normal, $file-formats: eot woff ttf)
-+font-face("Raleway", "../fonts/RalewayBold/RalewayBold", bold, $file-formats: eot woff ttf)
-+font-face("Raleway", "../fonts/RalewayLight/RalewayLight", 300, $file-formats: eot woff ttf)
-+font-face("Raleway", "../fonts/RalewaySemiBold/RalewaySemiBold", 600, $file-formats: eot woff ttf)
++font-face("Raleway", "../../fonts/RalewayRegular/RalewayRegular", normal, $file-formats: eot woff ttf)
++font-face("Raleway", "../../fonts/RalewayBold/RalewayBold", bold, $file-formats: eot woff ttf)
++font-face("Raleway", "../../fonts/RalewayLight/RalewayLight", 300, $file-formats: eot woff ttf)
++font-face("Raleway", "../../fonts/RalewaySemiBold/RalewaySemiBold", 600, $file-formats: eot woff ttf)
 
 $color: #1ad1ff
+$for_img: white
 $text_color: #888
 $main_color: #222
 $bg_light: #FAFAFA
+$error_color: red
+$light_color: lightgray
+
+$box-shadow: 0 0 10px rgba(0, 0, 0, 0.5)
+$border: 1px solid $light_color
+$main_font_size: 16px
 
 @mixin kerning($kerning)
 	letter-spacing: $kerning + px
-
-*
-    margin: 0
-    padding: 0
 
 html  
 	position: relative
 	min-height: 100%
 
+*,
 h1,
 p
 	margin: 0
@@ -37,10 +41,10 @@ p
 	top: 0
 	z-index: 9999
 	.loader_inner 
-		background-image: url("../img/preloader.gif")
+		background-image: url("../../img/preloader.gif")
 		background-repeat: no-repeat
 		background-position: center center
-		background-color: #fff
+		background-color: $bg_light
 		height: 60px
 		width: 60px
 		margin-top: -30px
@@ -52,10 +56,10 @@ p
 body
 	background-color: $bg_light
 	height: 100%
- 	min-width: 900px
+	min-width: 900px
 	font-family: "Raleway", sans-serif
 	font-weight: normal
-	font-size: 14px
+	font-size: $main_font_size
 
 header, footer
 	background-color: $main_color
@@ -71,14 +75,11 @@ header, footer
 
 .controls
 	float: right
-	height: 165px
 
 .exit
 	float: right
-	line-height: 165px;
-	text-decoration: none
 	font-size: 20px
-	color: $color
+	margin: 55px 0
 
 .close 
 	font-size: 28px
@@ -90,49 +91,52 @@ header, footer
 		+kerning(1)
 		color: $color 
 
-.validRegistration
+.validRegistration, .rev_error
 	+kerning(1)
-	color: red
+	color: $error_color
+	margin-top: 10px
 
 main
-	padding: 80px 0 120px 0
+	padding: 80px 50px 120px
+	min-height: 859px
 
-#item1, #item2
-	padding: 8px 12px
-	margin-left: 10px;
+.itemView
+	text-align: center
 
-.itemView, .review
-	padding: 20px
-	background-color: white
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5)
-	border-radius: 5px
-	img
-		margin: 0 auto
-		width: 244px
-		height: 217px
-	#title
-		font-size: 30px
+.review
+	ul
+		list-style: none
+		overflow: auto
+		max-height: 400px
+		margin-top: 30px
+
+.productRew
+	margin-bottom: 20px
+	background-color: $for_img
+	border: $border
+	box-shadow: $box-shadow
+	p
+		margin: 10px
+		font-size: $main_font_size
 		text-transform: capitalize
 
-#description
-	font-size: 18px
-	text-transform: capitalize
-
-.review 
-	margin: 18px 0px 0
-	padding: 10px
-
-.reviews
-	padding: 20px
-	margin-top: 40px
-
-.reviewRate
-	font-size: 22px
-	padding: 10px 10px 0 0
-	font-weight: bold
-
-.reviewComment
-	font-size: 16px
+.product
+	width: 30%
+	display: inline-block
+	margin: 10px 10px
+	padding: 10px 20px
+	background-color: $for_img
+	border: $border
+	border-radius: 8px
+	box-shadow: $box-shadow
+	cursor: pointer
+	img
+		height: 200px
+		width: 220px
+	p
+		text-transform: capitalize
+		margin: 5px 0
+		font-size: $main_font_size
 
 div.stars 
 	width: 198px
@@ -151,17 +155,17 @@ label.star
 
 input.star:checked ~ label.star:before 
 	content: '\f005'
-	color: #FD4;
+	color: #FD4
 	transition: all .25s
 
 input.star-5:checked ~ label.star:before 
-	color: #FE7;
+	color: #FE7
 	text-shadow: 0 0 20px #952
 
-input.star-1:checked ~ label.star:before 
+input.star-1:checked ~ label.star:before
 	color: #F62
 
-label.star:before 
+label.star:before
 	content: '\f006'
 	font-family: FontAwesome
 
@@ -176,5 +180,5 @@ footer
 	bottom: 0
 	width: 100%
 	p
-		color: #b3b3b3
-		font-size: 16px
+		color: $text_color
+		font-size: $main_font_size
