@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+	$('#modalReg').on('shown.bs.modal', function () {}); //bootstrap modal
+
 	var urlMain = "http://smktesting.herokuapp.com/",
 	token, id_product, urlForRev, urlForProd;
     token = 0;
@@ -57,9 +59,14 @@ $(document).ready(function() {
                     $('.rev_error').addClass('hidden');
             	} else {
 					$(".loginValidation").removeClass('hidden');
+					$(".successSign").addClass('hidden');
 				}              
         	}
    		});
+	});
+
+	$('#signUpBtn').click(function() { // hide loginValidation
+		$('.loginValidation').addClass('hidden');
 	});
 
 	/*send reviews*/
@@ -110,6 +117,7 @@ $(document).ready(function() {
 		    $('.product').click(function() { //add reviews for id
 		        idThis = this;
 		        $("#reviewList li").detach();
+		        $('.rev_error').addClass('hidden');
 		        id_product = idThis.id;
 		        urlForRev = urlMain + 'api/reviews/' + id_product;
 		        $('#titleRew').removeClass('hidden');
@@ -123,18 +131,21 @@ $(document).ready(function() {
 	function show_reviews() {
 	    $.getJSON(urlForRev, function(data) {
 	        for (var i in data) {
+	        var date = data[i].created_at;
+	        var newDate = moment.utc(date).format('LLL'); //moment.js - format date
+	        date = newDate;
 	           $("<li></li>")                                                                                                                                  
 		            .addClass('productRew')               
 		            .attr('id', data[i].id)
 		            .appendTo($("#reviewList"));
 	        	$("<p></p>")
-		            .text('Date: ' + data[i].created_at)
+		            .text('User: ' + data[i].created_by.username + ' at: ' + date)
 		            .appendTo($("#reviewList li")[i]);
 		        $("<p></p>")
 		            .text('Rate: ' + data[i].rate)
 		            .appendTo($("#reviewList li")[i]);
 	            $("<p></p>")
-		            .text('Text: ' + data[i].text)
+		            .text('Description: ' + data[i].text)
 		            .appendTo($("#reviewList li")[i]);
 	        };
 	    });
